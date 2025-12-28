@@ -7,24 +7,22 @@ class MealsScreen extends StatelessWidget {
     super.key,
     this.title,
     required this.meals,
-    required this.onToggleFavorite,
   });
 
   final String? title;
   final List<Meal> meals;
-  final void Function(Meal meal) onToggleFavorite;
 
   @override
   Widget build(BuildContext context) {
     if (title == null) {
-      return MealsWidget(meals: meals, onToggleFavorite: onToggleFavorite);
+      return MealsWidget(meals: meals);
     }
 
     return Scaffold(
       appBar: AppBar(
         title: Text(title!),
       ),
-      body: MealsWidget(meals: meals, onToggleFavorite: onToggleFavorite),
+      body: MealsWidget(meals: meals),
     );
   }
 }
